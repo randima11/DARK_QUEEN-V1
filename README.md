@@ -26,7 +26,7 @@
 
 # 2 PAIR CODE
 
-<a href="https://express-pairing-code2-1.onrender.com//"><img src="https://img.shields.io/badge/PAIR%20CODE-blue" alt="PAIR CODE" width="150"></a>
+<a href="https://95c2d278-bfd4-4a6b-b526-bdd5cfdbae59-00-1wqgpazfctsgk.pike.replit.dev/"><img src="https://img.shields.io/badge/PAIR%20CODE-blue" alt="PAIR CODE" width="150"></a>
   </br>
    <img src="https://i.imgur.com/dBaSKWF.gif" height="90" width="100%">
    <br>
