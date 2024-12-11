@@ -19,6 +19,8 @@ SESSION_ID: process.env.SESSION_ID || "",  //paste your session_id
 MODE: process.env.MODE || "public",
 PREFIX: process.env.PREFIX || ".",
 OWNER_REACT: process.env.OWNER_REACT || "true",
+AUTO_REACT: process.env.AUTO_REACT || "true",
+FAKE_RECORDING: process.env.FAKE_RECORDING || "true",
 BOT_NAME: process.env.BOT_NAME || "DARK_QUEEN",
 AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true", 
 PASTEBIN_API_KEY: process.env.PASTEBIN_API_KEY || "uh8QvO6vQJGtIug9WvjdTAPx_ZAFJAxn",
