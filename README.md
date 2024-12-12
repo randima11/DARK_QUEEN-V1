@@ -30,6 +30,14 @@
   </br>
    <img src="https://i.imgur.com/dBaSKWF.gif" height="90" width="100%">
    <br>
+   
+# 3 PAIR CODE
+   
+<a href="https://replit.com/@manishasasmith3/WEBPAIR-MEGA"><img src="https://img.shields.io/badge/PAIR%20CODE-blue" alt="PAIR CODE" width="150"></a>
+  </br>
+   <img src="https://i.imgur.com/dBaSKWF.gif" height="90" width="100%">
+   <br>
+
 
 
 # 3 DEPOLY FREE WORKFLOW
