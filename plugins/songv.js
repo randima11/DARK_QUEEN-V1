@@ -47,8 +47,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 *🔢 REPLY NUMBER*
 
-*𝟐.𝟏 𝑽𝑰𝑫𝑬𝑶 𝑫𝑶𝑾𝑵𝑳𝑶𝑨𝑫*
-*𝟐.𝟐 𝑽𝑰𝑫𝑬𝑶 𝑫𝑶𝑪𝑼𝑴𝑬𝑵𝑻*
+*𝟏  𝑽𝑰𝑫𝑬𝑶 𝑫𝑶𝑾𝑵𝑳𝑶𝑨𝑫*
+*𝟐  𝑽𝑰𝑫𝑬𝑶 𝑫𝑶𝑪𝑼𝑴𝑬𝑵𝑻*
 
 > *©ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*
 ╚═══════✮❁•°❀°•❁✮════════╝`;
@@ -63,12 +63,12 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
             if (msg.message.extendedTextMessage.contextInfo && msg.message.extendedTextMessage.contextInfo.stanzaId === vv.key.id) {
                 switch (selectedOption) {
-                    case '2.1':
+                    case '1':
                         let downvid = await fg.ytv(url);
                         let downloadvUrl = downvid.dl_url;
                         await conn.sendMessage(from, { video : { url:downloadvUrl }, caption: '> *©ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*', mimetype: 'video/mp4'},{ quoted: mek });
                         break;
-                    case '2.2':
+                    case '2':
                         let downviddoc = await fg.ytv(url);
                         let downloadvdocUrl = downviddoc.dl_url;
                         await conn.sendMessage(from, { document: { url:downloadvdocUrl }, caption: '> *©ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*', mimetype: 'video/mp4', fileName:data.title + ".mp4" }, { quoted: mek });
