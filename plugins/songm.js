@@ -48,8 +48,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 *🔢 REPLY NUMBER*
 
-*𝟏.𝟏 𝑨𝑼𝑫𝑰𝑶 𝑫𝑶𝑾𝑵𝑳𝑶𝑨𝑫*
-*𝟏.𝟐 𝑨𝑼𝑫𝑰𝑶 𝑫𝑶𝑪𝑼𝑴𝑬𝑵𝑻*
+*𝟏  𝑨𝑼𝑫𝑰𝑶 𝑫𝑶𝑾𝑵𝑳𝑶𝑨𝑫*
+*𝟐  𝑨𝑼𝑫𝑰𝑶 𝑫𝑶𝑪𝑼𝑴𝑬𝑵𝑻*
 
 > *©ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*
 ╚═══════✮❁•°❀°•❁✮════════╝`;
@@ -64,12 +64,12 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
             if (msg.message.extendedTextMessage.contextInfo && msg.message.extendedTextMessage.contextInfo.stanzaId === vv.key.id) {
                 switch (selectedOption) {
-                    case '1.1':
+                    case '1':
                         let down = await fg.yta(url);
                         let downloadUrl = down.dl_url;
                         await conn.sendMessage(from, { audio: { url:downloadUrl }, caption: '> *©ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*', mimetype: 'audio/mpeg'},{ quoted: mek });
                         break;
-                    case '1.2':
+                    case '2':
                         let downdoc = await fg.yta(url);
                         let downloaddocUrl = downdoc.dl_url;
                         await conn.sendMessage(from, { document: { url:downloaddocUrl }, caption: '> *©ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*', mimetype: 'audio/mpeg', fileName:data.title + ".mp3"}, { quoted: mek });
