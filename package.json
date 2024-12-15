@@ -1,12 +1,12 @@
 {
-  "name": "DARK_QUEEN",
+  "name": "DARK_QUEEN-V1",
   "version": "1",
   "description": "ꜱʀɪ-ʟᴀɴᴋᴀɴ ᴍᴏꜱᴛ ꜱᴘᴇᴇᴅ & ʙᴇꜱᴛ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name DARK_QUEEN",
-    "stop": "pm2 stop DARK_QUEEN",
-    "restart": "pm2 restart DARK_QUEEN"
+    "start": "pm2 start index.js --deep-monitoring --attach --name DARK_QUEEN-V1",
+    "stop": "pm2 stop DARK_QUEEN-V1",
+    "restart": "pm2 restart DARK_QUEEN-V1"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.7.9",
