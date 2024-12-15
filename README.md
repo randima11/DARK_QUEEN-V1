@@ -1,10 +1,16 @@
 # 𝑫𝑨𝑹𝑲_𝑸𝑼𝑬𝑬𝑵-𝑽𝟏
 
+
+```ꜱʀɪ-ʟᴀɴᴋᴀɴ ᴍᴏꜱᴛ ꜱᴘᴇᴇᴅ & ʙᴇꜱᴛ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ.✨🌷```
+
+
 <div align="center">
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=EB+Garamond&weight=800&size=28&duration=4000&pause=1000&random=false&width=435&lines=🩷ꜱʀɪ+ʟᴀɴᴋᴀɴ🩷;🩷ᴍᴏꜱᴛ+ꜱᴘᴇᴇᴅ+ʙᴇꜱᴛ+ᴍᴜʟᴛɪ+ᴅᴇᴠɪᴄᴇ🩷;🩷ᴡʜᴀᴛꜱᴀᴘᴘ+ʙᴏᴛ🩷;🩷ʙᴏᴛ+ᴅᴇᴠᴇʟᴏᴘᴇʀ+ɪꜱ🩷;☺️ᴍᴀɴɪꜱʜᴀ+ꜱᴀꜱᴍɪᴛʜᴀ☺️" alt="Typing SVG" /></a>
-<img src="https://i.imgur.com/dBaSKWF.gif" height="100" width="100%">
 
+
+
+<img src="https://i.imgur.com/dBaSKWF.gif" height="100" width="100%">
 
 <p align="center">
  <img src="https://files.catbox.moe/v1k9r3.jpg"  width="780px">
