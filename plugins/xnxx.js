@@ -13,9 +13,9 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, q, reply }) => {
     const searchTerm = q.trim();
-    if (!searchTerm) return reply(`𝖯𝗅𝖾𝖺𝗌𝖾 𝖯𝗋𝗈𝗏𝗂𝖽𝖾 𝖺 𝖲𝖾𝖺𝗋𝖼𝗁 𝖳𝖾𝗋𝗆`);
+    if (!searchTerm) return reply(`ᴘʟᴇᴀꜱᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ꜱᴇᴀʀᴄʜ ᴛᴇʀᴍ`);
 
-    reply(`𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 𝖥𝗈𝗋 𝖸𝗈𝗎𝗋 𝖵𝗂𝖽𝖾𝗈 𝗂𝗇 𝗱𝗮𝗿𝗸_𝗾𝘂𝗲𝗲𝗻 ➤...`);
+    reply(`ꜱᴇᴀʀᴄʜɪɢ ꜰᴏʀ ʏᴏᴜʀ ᴠɪᴅᴇᴏ`);
     try {
         // Search for the video and download
         const videoInfo = await xnxx.download(searchTerm);
@@ -23,7 +23,7 @@ async (conn, mek, m, { from, quoted, body, q, reply }) => {
             return await conn.sendMessage(from, { react: { text: '❌', key: mek.key } });
         }
 
-        reply(`𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽𝗂𝗇𝗀 𝖵𝗂𝖽𝖾𝗈 𝖯𝗅𝖾𝖺𝗌𝖾 𝖶𝖺𝗂𝗍 ➤...`);
+        reply(`ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴠɪᴅᴇᴏ ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ`);
         const videoUrl = videoInfo.link_dl;
         await conn.sendMessage(
             from,
