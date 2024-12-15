@@ -11,33 +11,58 @@ whatsapp number:94721551183
 
 
 
-
-
-
-const {cmd , commands} = require('../command')
+const axios = require('axios');
+const { cmd } = require('../command');
 
 cmd({
-    pattern: "repo",
-    desc: "repo the bot",
-    category: "main",
-    react: "📡",
+    pattern: "fact",
+    desc: "Get a random fun fact",
+    react: "😝",
+    category: "fun",
     filename: __filename
 },
+async (conn, mek, m, { from, q, reply }) => {
+    try {
+        const url = 'https://uselessfacts.jsph.pl/random.json?language=en';  // API for random facts
+        const response = await axios.get(url);
+        const fact = response.data.text;
 
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
+        const funFact = `
+ *©ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ꜰᴀᴄᴛ* 
 
-let dec = `*📍REPO LINK ❤️‍🔥👇*
+${fact}
 
-🩷◦ https://github.com/MANISHA-CMD
+Isn't that interesting? 😄
+`;
 
-*©ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*
+        return reply(funFact);
+    } catch (e) {
+        console.log(e);
+        return reply("⚠️ An error occurred while fetching a fun fact. Please try again later🤕.");
+    }
+});
 
-`
-await conn.sendMessage(from,{image:{url: `https://files.catbox.moe/v1k9r3.jpg`},caption:dec},{quoted:mek});
-
-}catch(e){
-console.log(e)
-reply(`${e}`)
-}
-})
+cmd({
+    pattern: "joke",
+    desc: "😂 Get a random joke",
+    react: "🤣",
+    category: "fun",
+    filename: __filename
+},
+async (conn, mek, m, { from, q, reply }) => {
+    try {
+        const url = 'https://official-joke-api.appspot.com/random_joke';  // API for random jokes
+        const response = await axios.get(url);
+        const joke = response.data;
+        const jokeMessage = `
+😂 *Here's a random joke for you!* 😂
+*${joke.setup}*
+${joke.punchline} 😄
+> *©ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴄᴛᴇᴀᴛᴇᴅ ʙʏ ᴍᴀɴɪꜱʜᴀ*
+`;
+        return reply(jokeMessage);
+    } catch (e) {
+        console.log(e);
+        return reply("⚠️ Couldn't fetch a joke right now. Please try again later.");
+    }
+});

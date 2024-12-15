@@ -11,33 +11,25 @@ whatsapp number:94721551183
 
 
 
-
-
-
-const {cmd , commands} = require('../command')
+const axios = require('axios');
+const { cmd, commands } = require('../command');
 
 cmd({
-    pattern: "repo",
-    desc: "repo the bot",
-    category: "main",
-    react: "📡",
+    pattern: "dog",
+    desc: "Fetch a random dog image.",
+    category: "fun",
+    react: "🐶",
     filename: __filename
 },
+async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+        const apiUrl = `https://dog.ceo/api/breeds/image/random`;
+        const response = await axios.get(apiUrl);
+        const data = response.data;
 
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-
-let dec = `*📍REPO LINK ❤️‍🔥👇*
-
-🩷◦ https://github.com/MANISHA-CMD
-
-*©ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*
-
-`
-await conn.sendMessage(from,{image:{url: `https://files.catbox.moe/v1k9r3.jpg`},caption:dec},{quoted:mek});
-
-}catch(e){
-console.log(e)
-reply(`${e}`)
-}
-})
+        await conn.sendMessage(from, { image: { url: data.message }, caption: '©ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ' }, { quoted: mek });
+    } catch (e) {
+        console.log(e);
+        reply(`Error Fetching Dog Image: ${e.message}`);
+    }
+});

@@ -12,32 +12,42 @@ whatsapp number:94721551183
 
 
 
-
-
-const {cmd , commands} = require('../command')
-
+const config = require('../config')
+const { cmd, commands } = require('../command')
+  
 cmd({
-    pattern: "repo",
-    desc: "repo the bot",
-    category: "main",
-    react: "📡",
-    filename: __filename
-},
-
+    pattern: "kickall",
+    desc: "Kicks all non-admin members from the group.",
+    react: "👏",
+    category: "group",
+    filename: __filename,
+},           
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-
-let dec = `*📍REPO LINK ❤️‍🔥👇*
-
-🩷◦ https://github.com/MANISHA-CMD
-
-*©ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*
-
-`
-await conn.sendMessage(from,{image:{url: `https://files.catbox.moe/v1k9r3.jpg`},caption:dec},{quoted:mek});
-
-}catch(e){
-console.log(e)
-reply(`${e}`)
-}
-})
+      if (!isAdmins) return reply(`ONLY ADMINS CAN USE THIS CMD 🪄♻️`)
+      if (!isOwner) return reply(`SORRY ADMINS YOU R NOT BOT OWNER 🪄♻️`)
+      
+        // Check if the command is used in a group
+        if (!isGroup) return reply(`This command is only for groups.`);
+        
+        // Check if the bot has admin privileges
+        if (!isBotAdmins) return reply(`I need admin privileges to kick users.`);
+        // Fetch all participants from the group
+        const allParticipants = groupMetadata.participants;
+        // Filter out the admins (including the bot)
+        const nonAdminParticipants = allParticipants.filter(member => !groupAdmins.includes(member.id));
+        if (nonAdminParticipants.length === 0) {
+            return reply('There are no non-admin members to kick.');
+        }
+        // Start removing non-admin participants
+        for (let participant of nonAdminParticipants) {
+            await conn.groupParticipantsUpdate(m.chat, [participant.id], "remove");
+  }
+        // Send a confirmation message once done
+        reply(`Successfully kicked all non-admin members from the group.`);
+        
+    } catch (e) {
+        console.error('Error kicking users:', e);
+        reply('An error occurred while trying to kick all members. Please try again.');
+    }
+});

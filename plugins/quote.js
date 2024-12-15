@@ -14,30 +14,28 @@ whatsapp number:94721551183
 
 
 
-const {cmd , commands} = require('../command')
+const axios = require('axios');
+const { cmd } = require('../command');
 
 cmd({
-    pattern: "repo",
-    desc: "repo the bot",
-    category: "main",
-    react: "📡",
+    pattern: "quote",
+    desc: "Get a random inspiring quote.",
+    category: "fun",
+    react: "💬",
     filename: __filename
 },
-
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-
-let dec = `*📍REPO LINK ❤️‍🔥👇*
-
-🩷◦ https://github.com/MANISHA-CMD
-
-*©ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*
-
-`
-await conn.sendMessage(from,{image:{url: `https://files.catbox.moe/v1k9r3.jpg`},caption:dec},{quoted:mek});
-
-}catch(e){
-console.log(e)
-reply(`${e}`)
-}
-})
+async (conn, mek, m, { from, reply }) => {
+    try {
+        const response = await axios.get('https://api.quotable.io/random');
+        const quote = response.data;
+        const message = `
+💬 "${quote.content}"
+- ${quote.author}
+*©ᴅᴀʀᴋ_Qᴜᴇᴇɴ ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍᴀɴɪꜱʜᴀ*
+        `;
+        return reply(message);
+    } catch (e) {
+        console.error("Error fetching quote:", e);
+        reply("¢συℓ∂ ησт ƒєт¢н α qυσтє. ρℓєαѕє тяу αgαιη ℓαтєя.");
+    }
+});

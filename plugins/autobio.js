@@ -12,32 +12,51 @@ whatsapp number:94721551183
 
 
 
+const { cmd } = require('../command');
+const config = require('../config');
 
+// AutoBIO feature variables
+let autoBioInterval;
 
-const {cmd , commands} = require('../command')
-
+// 1. Set AutoBIO
 cmd({
-    pattern: "repo",
-    desc: "repo the bot",
-    category: "main",
-    react: "📡",
+    pattern: "autobio",
+    desc: "Enable or disable the AutoBIO feature.",
+    category: "owner",
+    react: "🙃",
     filename: __filename
-},
+}, async (conn, mek, m, { from, isOwner, reply }) => {
+    if (!isOwner) return reply("❌ You are not the owner!");
 
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
+    config.autoBioEnabled = !config.autoBioEnabled;
 
-let dec = `*📍REPO LINK ❤️‍🔥👇*
+    if (config.autoBioEnabled) {
+        reply("👨‍💻 AutoBIO feature has been *enabled*! 🔄");
+        startAutoBio(conn);
+    } else {
+        reply("👨‍💻 AutoBIO feature has been *disabled*! 🚫");
+        stopAutoBio();
+    }
+});
 
-🩷◦ https://github.com/MANISHA-CMD
+// 2. Start AutoBIO
+function startAutoBio(conn) {
+    // Clear any existing interval to avoid duplicates
+    if (autoBioInterval) clearInterval(autoBioInterval);
 
-*©ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*
-
-`
-await conn.sendMessage(from,{image:{url: `https://files.catbox.moe/v1k9r3.jpg`},caption:dec},{quoted:mek});
-
-}catch(e){
-console.log(e)
-reply(`${e}`)
+    // Set a new interval to update the bio every minute (or any preferred time)
+    autoBioInterval = setInterval(async () => {
+        const time = new Date().toLocaleTimeString();  // Get the current time
+        const bioText = `🩷ꜱʀɪ-ʟᴀɴᴋᴀɴ ᴍᴏꜱᴛ ꜱᴘᴇᴇᴅ & ʙᴇꜱᴛ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ.㊗️ ᴛʜɪꜱ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ɪꜱ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ.🩷 [${time}] 👨‍💻`;  // Set the bio text with time
+        await conn.updateProfileStatus(bioText);  // Update the bot's bio
+    }, 60 * 1000);  // 1 minute interval
 }
-})
+
+// 3. Stop AutoBIO
+function stopAutoBio() {
+    if (autoBioInterval) {
+        clearInterval(autoBioInterval);  // Stop the interval
+        autoBioInterval = null;
+        console.log("👨‍💻 AutoBIO feature stopped.");  // Log the stopping of the feature
+    }
+          }
