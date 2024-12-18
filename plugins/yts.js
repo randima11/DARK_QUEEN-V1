@@ -13,42 +13,4 @@ whatsapp number:94721551183
 
 
 
-const config = require('../config')
-const l = console.log
-const { cmd, commands } = require('../command')
-const dl = require('@bochilteam/scraper')  
-const ytdl = require('yt-search');
-const fs = require('fs-extra')
-var videotime = 60000 // 1000 min
-const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
-cmd({
-    pattern: "yts",
-    alias: ["ytsearch"],
-    use: '.yts sameer kutti',
-    react: "🔎",
-    desc: "Search and get details from youtube.",
-    category: "search",
-    filename: __filename
-
-},
-
-async(conn, mek, m,{from, l, quoted, body, isCmd, umarmd, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-if (!q) return reply('*Please give me words to search*')
-try {
-let yts = require("yt-search")
-var arama = await yts(q);
-} catch(e) {
-    l(e)
-return await conn.sendMessage(from , { text: '*Error !!*' }, { quoted: mek } )
-}
-var mesaj = '';
-arama.all.map((video) => {
-mesaj += ' *🖲️' + video.title + '*\n🔗 ' + video.url + '\n\n'
-});
-await conn.sendMessage(from , { text:  mesaj }, { quoted: mek } )
-} catch (e) {
-    l(e)
-  reply('*Error !!*')
-}
-});
+const _0xce2d09=_0x4dc2;(function(_0x146268,_0x5c14d0){const _0x2392d9=_0x4dc2,_0x21b540=_0x146268();while(!![]){try{const _0x2e570d=parseInt(_0x2392d9(0x18b))/0x1*(-parseInt(_0x2392d9(0x196))/0x2)+parseInt(_0x2392d9(0x1a0))/0x3+-parseInt(_0x2392d9(0x1a2))/0x4+parseInt(_0x2392d9(0x19e))/0x5+-parseInt(_0x2392d9(0x188))/0x6*(-parseInt(_0x2392d9(0x18c))/0x7)+parseInt(_0x2392d9(0x199))/0x8*(parseInt(_0x2392d9(0x198))/0x9)+-parseInt(_0x2392d9(0x18f))/0xa*(-parseInt(_0x2392d9(0x191))/0xb);if(_0x2e570d===_0x5c14d0)break;else _0x21b540['push'](_0x21b540['shift']());}catch(_0x190f50){_0x21b540['push'](_0x21b540['shift']());}}}(_0x50af,0x2f3a3));const config=require(_0xce2d09(0x189)),l=console[_0xce2d09(0x19a)],{cmd,commands}=require(_0xce2d09(0x18e)),dl=require(_0xce2d09(0x19f)),ytdl=require('yt-search'),fs=require('fs-extra');function _0x4dc2(_0x4d5fe7,_0xa7e083){const _0x50af5f=_0x50af();return _0x4dc2=function(_0x4dc264,_0x174b9b){_0x4dc264=_0x4dc264-0x188;let _0x1d9cf3=_0x50af5f[_0x4dc264];return _0x1d9cf3;},_0x4dc2(_0x4d5fe7,_0xa7e083);}var videotime=0xea60;const {getBuffer,getGroupAdmins,getRandom,h2k,isUrl,Json,runtime,sleep,fetchJson}=require(_0xce2d09(0x19c));function _0x50af(){const _0x2bcc2b=['sendMessage','all','yt-search','.yts\x20sameer\x20kutti','2XjySRW','*Please\x20give\x20me\x20words\x20to\x20search*','630702SCepIW','16btVlAc','log','search','../lib/functions','*Error\x20!!*','387480WGXScU','@bochilteam/scraper','463866nlWerY','\x20*🖲️','1393140EXLpQI','2123382nJsNyS','../config','title','185751PGHYxy','7rSzRyK','Search\x20and\x20get\x20details\x20from\x20youtube.','../command','13080ZjQHYB','ytsearch','11ZiofLJ'];_0x50af=function(){return _0x2bcc2b;};return _0x50af();}cmd({'pattern':'yts','alias':[_0xce2d09(0x190)],'use':_0xce2d09(0x195),'react':'🔎','desc':_0xce2d09(0x18d),'category':_0xce2d09(0x19b),'filename':__filename},async(_0x1eadbf,_0x5cee26,_0xe37c54,{from:_0x3e5a48,l:_0x814b1,quoted:_0x132335,body:_0x4f0e1f,isCmd:_0x5c1425,umarmd:_0x2d7cf1,args:_0x82ab76,q:_0xca7d04,isGroup:_0x47f7a8,sender:_0x1d1c04,senderNumber:_0x230143,botNumber2:_0x3f13e2,botNumber:_0x40aeee,pushname:_0x1fa57a,isMe:_0x5a2ac6,isOwner:_0x10dbc6,groupMetadata:_0x50019d,groupName:_0x48f240,participants:_0x6e4e34,groupAdmins:_0x1685ec,isBotAdmins:_0x4f657d,isAdmins:_0x34742c,reply:_0x26cfc4})=>{const _0x48c8e0=_0xce2d09;try{if(!_0xca7d04)return _0x26cfc4(_0x48c8e0(0x197));try{let _0x57448f=require(_0x48c8e0(0x194));var _0x3480c9=await _0x57448f(_0xca7d04);}catch(_0x59cb74){return _0x814b1(_0x59cb74),await _0x1eadbf[_0x48c8e0(0x192)](_0x3e5a48,{'text':_0x48c8e0(0x19d)},{'quoted':_0x5cee26});}var _0x4291c0='';_0x3480c9[_0x48c8e0(0x193)]['map'](_0x49af80=>{const _0x1d7f7b=_0x48c8e0;_0x4291c0+=_0x1d7f7b(0x1a1)+_0x49af80[_0x1d7f7b(0x18a)]+'*\x0a🔗\x20'+_0x49af80['url']+'\x0a\x0a';}),await _0x1eadbf[_0x48c8e0(0x192)](_0x3e5a48,{'text':_0x4291c0},{'quoted':_0x5cee26});}catch(_0x52a179){_0x814b1(_0x52a179),_0x26cfc4(_0x48c8e0(0x19d));}});
