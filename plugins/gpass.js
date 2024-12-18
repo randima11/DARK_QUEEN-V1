@@ -1,40 +1,13 @@
-const crypto = require('crypto');
-const { cmd } = require('../command');
+/*
+██████╗  █████╗ ██████╗ ██╗  ██╗         ██████╗ ██╗   ██╗███████╗███████╗███╗   ██╗      ██╗   ██╗ ██╗
+██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝        ██╔═══██╗██║   ██║██╔════╝██╔════╝████╗  ██║      ██║   ██║███║
+██║  ██║███████║██████╔╝█████╔╝         ██║   ██║██║   ██║█████╗  █████╗  ██╔██╗ ██║█████╗██║   ██║╚██║
+██║  ██║██╔══██║██╔══██╗██╔═██╗         ██║▄▄ ██║██║   ██║██╔══╝  ██╔══╝  ██║╚██╗██║╚════╝╚██╗ ██╔╝ ██║
+██████╔╝██║  ██║██║  ██║██║  ██╗███████╗╚██████╔╝╚██████╔╝███████╗███████╗██║ ╚████║       ╚████╔╝  ██║
+╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═══╝        ╚═══╝   ╚═╝                                                                                                       
+creare by manisha sasmitha 
+whatsapp number:94721551183
+*/
 
-cmd({
-    pattern: "gpass",
-    desc: "Generate a strong password.",
-    category: "other",
-    react: "🔐",
-    filename: __filename
-},
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        const length = args[0] ? parseInt(args[0]) : 12; // Default length is 12 if not provided
-        if (isNaN(length) || length < 8) {
-            return reply('Please provide a valid length for the password (Minimum 08 Characters💦).');
-        }
 
-        const generatePassword = (len) => {
-            const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]{}|;:,.<>?';
-            let password = '';
-            for (let i = 0; i < len; i++) {
-                const randomIndex = crypto.randomInt(0, charset.length);
-                password += charset[randomIndex];
-            }
-            return password;
-        };
-
-        const password = generatePassword(length);
-        const message = `🔐 *Your Strong Password* 🔐\n\nPlease find your generated password below*`;
-
-        // Send initial notification message
-        await conn.sendMessage(from, { text: message }, { quoted: mek });
-
-        // Send the password in a separate message
-        await conn.sendMessage(from, { text: password }, { quoted: mek });
-    } catch (e) {
-        console.log(e);
-        reply(`❌ Error generating password🤕: ${e.message}`);
-    }
-});
+const _0x25705a=_0x423a;function _0x423a(_0x4b20a1,_0x481b26){const _0x42496d=_0x4249();return _0x423a=function(_0x423a53,_0x46018f){_0x423a53=_0x423a53-0x1b5;let _0x1e211b=_0x42496d[_0x423a53];return _0x1e211b;},_0x423a(_0x4b20a1,_0x481b26);}(function(_0x2d1efb,_0x1504d3){const _0xd63103=_0x423a,_0x21811e=_0x2d1efb();while(!![]){try{const _0x38ba0c=parseInt(_0xd63103(0x1bb))/0x1+parseInt(_0xd63103(0x1c8))/0x2*(parseInt(_0xd63103(0x1c7))/0x3)+-parseInt(_0xd63103(0x1b9))/0x4*(-parseInt(_0xd63103(0x1b8))/0x5)+parseInt(_0xd63103(0x1c3))/0x6*(-parseInt(_0xd63103(0x1b6))/0x7)+parseInt(_0xd63103(0x1c0))/0x8*(-parseInt(_0xd63103(0x1c9))/0x9)+parseInt(_0xd63103(0x1b5))/0xa+-parseInt(_0xd63103(0x1c1))/0xb;if(_0x38ba0c===_0x1504d3)break;else _0x21811e['push'](_0x21811e['shift']());}catch(_0x4548cb){_0x21811e['push'](_0x21811e['shift']());}}}(_0x4249,0x4ff6b));const crypto=require('crypto'),{cmd}=require(_0x25705a(0x1c4));function _0x4249(){const _0x22a186=['7721296oOqEUJ','log','12hAJEvX','../command','randomInt','abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]{}|;:,.<>?','477654UHDfAy','2WBNLCl','385353klwCOo','2377870tJNKwM','1276604QufntO','sendMessage','43315QAubmB','300ACCNmJ','length','390298EwaUGR','Please\x20provide\x20a\x20valid\x20length\x20for\x20the\x20password\x20(Minimum\x2008\x20Characters💦).','❌\x20Error\x20generating\x20password🤕:\x20','🔐\x20*Your\x20Strong\x20Password*\x20🔐\x0a\x0aPlease\x20find\x20your\x20generated\x20password\x20below*','Generate\x20a\x20strong\x20password.','8bAYGgG'];_0x4249=function(){return _0x22a186;};return _0x4249();}cmd({'pattern':'gpass','desc':_0x25705a(0x1bf),'category':'other','react':'🔐','filename':__filename},async(_0xa2a8eb,_0x135941,_0x28895f,{from:_0x28ed15,quoted:_0x2f09fe,body:_0x19c5b2,isCmd:_0x23f173,command:_0x321d3b,args:_0x165338,q:_0x4c0ec0,isGroup:_0xd45607,sender:_0x18b450,senderNumber:_0x16b123,botNumber2:_0x4247c9,botNumber:_0x1170cb,pushname:_0x12a95d,isMe:_0x2d7da8,isOwner:_0x12b184,groupMetadata:_0x52fef2,groupName:_0x50be39,participants:_0x4e80a2,groupAdmins:_0x45e777,isBotAdmins:_0x47d2d4,isAdmins:_0x52f932,reply:_0x4adaf3})=>{const _0x3d5b14=_0x25705a;try{const _0x2ba387=_0x165338[0x0]?parseInt(_0x165338[0x0]):0xc;if(isNaN(_0x2ba387)||_0x2ba387<0x8)return _0x4adaf3(_0x3d5b14(0x1bc));const _0x509cfe=_0x5c5ac8=>{const _0x3e8446=_0x3d5b14,_0x79bccd=_0x3e8446(0x1c6);let _0x19b79e='';for(let _0x56f807=0x0;_0x56f807<_0x5c5ac8;_0x56f807++){const _0x24105f=crypto[_0x3e8446(0x1c5)](0x0,_0x79bccd[_0x3e8446(0x1ba)]);_0x19b79e+=_0x79bccd[_0x24105f];}return _0x19b79e;},_0x2dccbe=_0x509cfe(_0x2ba387),_0x25f851=_0x3d5b14(0x1be);await _0xa2a8eb[_0x3d5b14(0x1b7)](_0x28ed15,{'text':_0x25f851},{'quoted':_0x135941}),await _0xa2a8eb[_0x3d5b14(0x1b7)](_0x28ed15,{'text':_0x2dccbe},{'quoted':_0x135941});}catch(_0x4ed8a2){console[_0x3d5b14(0x1c2)](_0x4ed8a2),_0x4adaf3(_0x3d5b14(0x1bd)+_0x4ed8a2['message']);}});
