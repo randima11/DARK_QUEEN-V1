@@ -9,54 +9,5 @@ creare by manisha sasmitha
 whatsapp number:94721551183
 */
 
-const config = require('../config');
-const { cmd, commands } = require('../command');
-const fs = require('fs');
-const path = require('path');
 
-cmd({
-    pattern: "save",
-    react: "📁",
-    alias: ["store"],
-    desc: "Save and send back a media file (image, video, or audio).",
-    category: "media",
-    use: ".save <caption>",
-    filename: __filename,
-},
-async (conn, mek, m, { quoted, q, reply }) => {
-    try {
-        if (!quoted) {
-            return reply("❌ Reply to a media message (video, image, or audio) with the `.save` command.");
-        }
-
-        const messageType = quoted.mtype;
-        let mediaType;
-
-        // Determine the type of media
-        if (/video/.test(messageType)) {
-            mediaType = "video";
-        } else if (/image/.test(messageType)) {
-            mediaType = "image";
-        } else if (/audio/.test(messageType)) {
-            mediaType = "audio";
-        } else {
-            return reply("❌ Only video, image, or audio messages are supported.");
-        }
-
-        // Download and save the media file
-        const mediaPath = await conn.downloadAndSaveMediaMessage(quoted);
-        const filePath = path.resolve(mediaPath);
-
-        // Send the saved media back
-        const mediaMessage = {
-            caption: q || '',
-        };
-        mediaMessage[mediaType] = { url: `file://${filePath}` };
-
-        await conn.sendMessage(m.sender, mediaMessage, { quoted: mek });
-        await reply("✅ Successfully saved and sent the media file.");
-    } catch (error) {
-        console.error(error);
-        reply("❌ Failed to save and send the media. Please try again.");
-    }
-});
+const _0x53444b=_0x546c;(function(_0x2eb789,_0x3bafc8){const _0x125287=_0x546c,_0x2f0116=_0x2eb789();while(!![]){try{const _0x44ce81=parseInt(_0x125287(0xdf))/0x1*(-parseInt(_0x125287(0xd2))/0x2)+-parseInt(_0x125287(0xd8))/0x3+parseInt(_0x125287(0xdd))/0x4+-parseInt(_0x125287(0xcd))/0x5*(-parseInt(_0x125287(0xd7))/0x6)+parseInt(_0x125287(0xda))/0x7+parseInt(_0x125287(0xd1))/0x8*(-parseInt(_0x125287(0xd4))/0x9)+-parseInt(_0x125287(0xe0))/0xa;if(_0x44ce81===_0x3bafc8)break;else _0x2f0116['push'](_0x2f0116['shift']());}catch(_0x224477){_0x2f0116['push'](_0x2f0116['shift']());}}}(_0x1a79,0x54fac));const config=require(_0x53444b(0xc7)),{cmd,commands}=require(_0x53444b(0xdc)),fs=require('fs'),path=require(_0x53444b(0xcb));function _0x546c(_0xa857c3,_0x224e96){const _0x1a79a9=_0x1a79();return _0x546c=function(_0x546ce0,_0x3f9b16){_0x546ce0=_0x546ce0-0xc4;let _0x55e706=_0x1a79a9[_0x546ce0];return _0x55e706;},_0x546c(_0xa857c3,_0x224e96);}function _0x1a79(){const _0x1bd14b=['audio','Save\x20and\x20send\x20back\x20a\x20media\x20file\x20(image,\x20video,\x20or\x20audio).','path','save','3214315eYFPaE','sender','downloadAndSaveMediaMessage','✅\x20Successfully\x20saved\x20and\x20sent\x20the\x20media\x20file.','8MKuGml','2LLGrep','mtype','214389ljKbhV','video','.save\x20<caption>','6nmmWBB','860976sJVYYv','file://','2961567exmzxc','store','../command','1337776cpugSw','❌\x20Only\x20video,\x20image,\x20or\x20audio\x20messages\x20are\x20supported.','298973YyfPwv','4425260TGxTze','media','test','sendMessage','../config','image'];_0x1a79=function(){return _0x1bd14b;};return _0x1a79();}cmd({'pattern':_0x53444b(0xcc),'react':'📁','alias':[_0x53444b(0xdb)],'desc':_0x53444b(0xca),'category':_0x53444b(0xc4),'use':_0x53444b(0xd6),'filename':__filename},async(_0x3322b3,_0x571b09,_0x5b1b7e,{quoted:_0x20794e,q:_0x33c825,reply:_0x5e5120})=>{const _0x5f4758=_0x53444b;try{if(!_0x20794e)return _0x5e5120('❌\x20Reply\x20to\x20a\x20media\x20message\x20(video,\x20image,\x20or\x20audio)\x20with\x20the\x20`.save`\x20command.');const _0x40e9f6=_0x20794e[_0x5f4758(0xd3)];let _0x22a9d1;if(/video/[_0x5f4758(0xc5)](_0x40e9f6))_0x22a9d1=_0x5f4758(0xd5);else{if(/image/[_0x5f4758(0xc5)](_0x40e9f6))_0x22a9d1=_0x5f4758(0xc8);else{if(/audio/['test'](_0x40e9f6))_0x22a9d1=_0x5f4758(0xc9);else return _0x5e5120(_0x5f4758(0xde));}}const _0x3eba54=await _0x3322b3[_0x5f4758(0xcf)](_0x20794e),_0x2cc3e4=path['resolve'](_0x3eba54),_0x2b15e4={'caption':_0x33c825||''};_0x2b15e4[_0x22a9d1]={'url':_0x5f4758(0xd9)+_0x2cc3e4},await _0x3322b3[_0x5f4758(0xc6)](_0x5b1b7e[_0x5f4758(0xce)],_0x2b15e4,{'quoted':_0x571b09}),await _0x5e5120(_0x5f4758(0xd0));}catch(_0x2e8fc8){console['error'](_0x2e8fc8),_0x5e5120('❌\x20Failed\x20to\x20save\x20and\x20send\x20the\x20media.\x20Please\x20try\x20again.');}});
