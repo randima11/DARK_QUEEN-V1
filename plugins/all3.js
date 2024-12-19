@@ -10,7 +10,7 @@ let baseUrl;
 })();
 
 
-const yourName = "*AWAIS MD🧬*";
+const yourName = "*ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1*";
 
 //twitter dl (x)
 cmd({
@@ -26,7 +26,7 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
         if (!q && !q.startsWith("https://")) return reply("give me twitter url")
         //fetch data from api  
         let data = await fetchJson(`${baseUrl}/api/twitterdl?url=${q}`)
-        reply("*AWAIS MD TWITTER VIDEO DOWNLOADING...📥*")
+        reply("*ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴛᴡɪᴛᴛᴇʀ ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅ📥*")
         //send video (hd,sd)
         await conn.sendMessage(from, { video: { url: data.data.data.HD }, mimetype: "video/mp4", caption: `- HD\n\n ${yourName}` }, { quoted: mek })
         await conn.sendMessage(from, { video: { url: data.data.data.SD }, mimetype: "video/mp4", caption: `- SD \n\n ${yourName}` }, { quoted: mek })  
@@ -52,7 +52,7 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
         if (!q && !q.startsWith("https://")) return reply("give me gdrive url")
         //fetch data from api  
         let data = await fetchJson(`${baseUrl}/api/gdrivedl?url=${q}`)
-        reply("*AWAIS MD GOOGLE DRIVE FILE DOWNLOADING...📥*")
+        reply("*ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ɢᴏᴏɢʟᴇ ᴅʀɪᴠᴇ ꜰɪʟᴇ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ.📥*")
         await conn.sendMessage(from, { document: { url: data.data.download }, fileName: data.data.fileName, mimetype: data.data.mimeType, caption: `${data.data.fileName}\n\n${yourName}` }, { quoted: mek })                                                                                                                 
     } catch (e) {
         console.log(e)
@@ -60,46 +60,68 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
     }
 })
 
+const apilink = 'https://www.dark-yasiya-api.site/download/mfire?ur' // API LINK ( DO NOT CHANGE THIS!! )
+
+
 cmd({
-    pattern: "apk",
-    alias: ["modapk"],
-    desc: "download apks",
+    pattern: "mfire",
+    alias: ["mf","mediafire"],
+    react: "🔥",
+    desc: "",
     category: "download",
-    react: "⚡",
+    use: '.mfire < mediafire url >',
     filename: __filename
 },
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        if (!q && !q.startsWith("https://")) return reply("❗Apk Not Found,Sorry")
-        //fetch data from api          
-        let baseUrl = 'your_base_url'; // Define baseUrl here
-        let data = await fetchJson(`${baseUrl}/api/apkdl?url=${q}`); // Correct template literal
-        reply("plase waite...")
-        await conn.sendMessage(from, { document: { url: data.data.link_1 }, fileName: data.data.name, mimetype: data.data.file_type, caption: cap }, { quoted: mek })                                                                                                                 
-         }catch(e){
-        console.log(e)
-        reply(`${e}`)
-        }
-        })
+async(conn, mek, m,{from, quoted, reply, q }) => {
+try{
+  
+if(!q) return await reply("PLEASE GIVE ME URL");
+  if(!q.includes('mediafire.com')) return await reply("This url is invalid");
+  
+const mfire = await fetchJson(`${apilink}/download/mfire?url=${q}`);
+  
+const msg = `
+           *乂 ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴍᴇᴅɪᴀꜰɪʀᴇ ᴅᴏᴡɴʟᴏᴀᴅ * 
 
-cmd({
-    pattern: "apkdl",
-    alias: ["modapk"],
-    desc: "download apks",
-    category: "download",
-    filename: __filename,
-    react: "📁"
-},
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        if (!q && !q.startsWith("https://")) return reply("𝚊𝚙𝚔 𝚗𝚘𝚝 𝚏𝚘𝚞𝚗𝚍 ‼️")
-        //fetch data from api  
-        let data = await fetchJson(`${baseUrl}/api/apkdl?url=${q}`)
-        reply("*Thenu-MD*\n*ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...*")
-        await conn.sendMessage(from, { document: { url: data.data.link_1 }, fileName: data.data.name, mimetype: data.data.file_type, caption: cap }, { quoted: mek })                                                                                                                 
-    } catch (e) {
-        console.log(e)
-        reply(`Cant Find`)
-    }
+
+• *𝖥𝗂𝗅𝖾 𝖭𝖺𝗆𝖾* - ${mfire.result.fileName}
+
+• *𝖥𝗂𝗅𝖾 𝖲𝗂𝗓𝖾* - ${mfire.result.size}
+
+• *𝖴𝗉𝗅𝗈𝖺𝖽 𝖣𝖺𝗍𝖾 𝖠𝗇𝖽 𝖳𝗂𝗆𝖾* - ${mfire.result.date}
+
+> *©ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*`
+
+       // Sending the image with caption
+          const sentMsg = await conn.sendMessage(from, {
+
+
+          text: msg,
+          contextInfo: {
+
+          forwardingScore: 999,
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+          newsletterName: ' ᴍᴀɴɪꜱʜᴀ',
+          newsletterJid: "120363296605464049@newsletter",
+          },
+          externalAdReply: {
+              title: `ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴍᴇᴅɪᴀꜰɪʀᴇ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
+              body: `Can't Find The Information. You Can Try Another Way. Error Code 4043`,
+              thumbnailUrl: `https://i.ibb.co/dPw1fHD/mfire.jpg`,
+              sourceUrl: ``,
+              mediaType: 1,
+              renderLargerThumbnail: true
+              }
+                  }
+              }, { quoted: mek });
+  
+// SEND FILE
+await conn.sendMessage(from, { document: { url: mfire.result.dl_link }, mimetype: mfire.result.fileType , fileName: mfire.result.fileName, caption: mfire.result.fileName }, { quoted: mek });
+
+  
+} catch (e) {
+console.log(e)
+reply('THIS URL TYPE IS NOT WORKING !!')
+}
 })
-
