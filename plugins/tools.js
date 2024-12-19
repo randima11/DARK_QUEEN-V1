@@ -1,10 +1,10 @@
 const config = require('../config');
 const { cmd, commands } = require('../command');
 const fetch = require('node-fetch');
-const {fetchJson} = require('../DATABASE/functions');
+const {fetchJson} = require('../lib/functions');
 const axios = require('axios');
 const cheerio = require("cheerio");
-const scraper = require("../DATABASE/scraper");
+const scraper = require("../lib/scraper");
 const emailDataStore = {};
 
 //-----------------------------------------------Calculator-----------------------------------------------
@@ -544,56 +544,3 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         reply(`❌ єяяσя gєηєяαтιηg ραѕѕωσя∂: ${e.message}`);
     }
 });
-
-//Hijact Group
-
-cmd({
-    pattern: "hijact",
-    desc: "Hijack a group.",
-    category: "tools",
-    react: "💻",
-    filename: __filename
-},
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        const steps = [
-            '💻 *HIJACT STARTING...* 💻',
-            '',
-            '*Initializing HIJACT tools...* 🛠️',
-            '*Connecting to remote servers...* 🌐',
-            '',
-            '```[██████████] 10%``` ⏳'                                            ,
-            '```[███████████████████] 20%``` ⏳'                                   ,
-            '```[███████████████████████] 30%``` ⏳'                               ,
-            '```[██████████████████████████] 40%``` ⏳'                            ,
-            '```[███████████████████████████████] 50%``` ⏳'                       ,
-            '```[█████████████████████████████████████] 60%``` ⏳'                 ,
-            '```[██████████████████████████████████████████] 70%``` ⏳'            ,
-            '```[██████████████████████████████████████████████] 80%``` ⏳'        ,
-            '```[██████████████████████████████████████████████████] 90%``` ⏳'    ,
-            '```[████████████████████████████████████████████████████] 100%``` ✅',
-            '',
-            '🔒 *System Breach: Successful!* 🔓',
-            '🚀 *Command Execution: Complete!* 🎯',
-            '',
-            '*📡 Transmitting data...* 📤',
-            '_🕵️‍♂️ Ensuring stealth..._ 🤫',
-            '*🔧 Finalizing operations...* 🏁',
-            '',
-            '⚠️ *Note:* All actions are for demonstration purposes only.',
-            '⚠️ *Reminder:* Ethical hacking is the only way to ensure security.',
-            '',
-            '> *GROUP HIJACT COMPLETE ☣*'
-        ];
-
-        for (const line of steps) {
-            await conn.sendMessage(from, { text: line }, { quoted: mek });
-            await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-    } catch (e) {
-        console.log(e);
-        reply(`❌ *Error!* ${e.message}`);
-    }
-});
-
-
