@@ -1,127 +1,14 @@
-const { fetchJson } = require('../lib/functions')
-const config = require('../config')
-const { cmd, commands } = require('../command')
-
-// FETCH API URL
-let baseUrl;
-(async () => {
-    let baseUrlGet = await fetchJson(`https://raw.githubusercontent.com/prabathLK/PUBLIC-URL-HOST-DB/main/public/url.json`)
-    baseUrl = baseUrlGet.api
-})();
-
-
-const yourName = "*ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1*";
-
-//twitter dl (x)
-cmd({
-    pattern: "twitter",
-    alias: ["twdl"],
-    desc: "download tw videos",
-    category: "download",
-    react: "📩",
-    filename: __filename
-},
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        if (!q && !q.startsWith("https://")) return reply("give me twitter url")
-        //fetch data from api  
-        let data = await fetchJson(`${baseUrl}/api/twitterdl?url=${q}`)
-        reply("*ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴛᴡɪᴛᴛᴇʀ ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅ📥*")
-        //send video (hd,sd)
-        await conn.sendMessage(from, { video: { url: data.data.data.HD }, mimetype: "video/mp4", caption: `- HD\n\n ${yourName}` }, { quoted: mek })
-        await conn.sendMessage(from, { video: { url: data.data.data.SD }, mimetype: "video/mp4", caption: `- SD \n\n ${yourName}` }, { quoted: mek })  
-        //send audio    
-        await conn.sendMessage(from, { audio: { url: data.data.data.audio }, mimetype: "audio/mpeg" }, { quoted: mek })  
-    } catch (e) {
-        console.log(e)
-        reply(`${e}`)
-    }
-})
-
-//gdrive(google drive) dl
-cmd({
-    pattern: "gdrive",
-    alias: ["googledrive"],
-    desc: "download gdrive files",
-    category: "download",
-    react: "📩",
-    filename: __filename
-},
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        if (!q && !q.startsWith("https://")) return reply("give me gdrive url")
-        //fetch data from api  
-        let data = await fetchJson(`${baseUrl}/api/gdrivedl?url=${q}`)
-        reply("*ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ɢᴏᴏɢʟᴇ ᴅʀɪᴠᴇ ꜰɪʟᴇ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ.📥*")
-        await conn.sendMessage(from, { document: { url: data.data.download }, fileName: data.data.fileName, mimetype: data.data.mimeType, caption: `${data.data.fileName}\n\n${yourName}` }, { quoted: mek })                                                                                                                 
-    } catch (e) {
-        console.log(e)
-        reply(`${e}`)
-    }
-})
-
-const apilink = 'https://www.dark-yasiya-api.site/download/mfire?ur' // API LINK ( DO NOT CHANGE THIS!! )
+/*
+██████╗  █████╗ ██████╗ ██╗  ██╗         ██████╗ ██╗   ██╗███████╗███████╗███╗   ██╗      ██╗   ██╗ ██╗
+██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝        ██╔═══██╗██║   ██║██╔════╝██╔════╝████╗  ██║      ██║   ██║███║
+██║  ██║███████║██████╔╝█████╔╝         ██║   ██║██║   ██║█████╗  █████╗  ██╔██╗ ██║█████╗██║   ██║╚██║
+██║  ██║██╔══██║██╔══██╗██╔═██╗         ██║▄▄ ██║██║   ██║██╔══╝  ██╔══╝  ██║╚██╗██║╚════╝╚██╗ ██╔╝ ██║
+██████╔╝██║  ██║██║  ██║██║  ██╗███████╗╚██████╔╝╚██████╔╝███████╗███████╗██║ ╚████║       ╚████╔╝  ██║
+╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═══╝        ╚═══╝   ╚═╝                                                                                                       
+creare by manisha sasmitha 
+whatsapp number:94721551183
+*/
 
 
-cmd({
-    pattern: "mfire",
-    alias: ["mf","mediafire"],
-    react: "🔥",
-    desc: "",
-    category: "download",
-    use: '.mfire < mediafire url >',
-    filename: __filename
-},
-async(conn, mek, m,{from, quoted, reply, q }) => {
-try{
-  
-if(!q) return await reply("PLEASE GIVE ME URL");
-  if(!q.includes('mediafire.com')) return await reply("This url is invalid");
-  
-const mfire = await fetchJson(`${apilink}/download/mfire?url=${q}`);
-  
-const msg = `
-           *乂 ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴍᴇᴅɪᴀꜰɪʀᴇ ᴅᴏᴡɴʟᴏᴀᴅ * 
 
-
-• *𝖥𝗂𝗅𝖾 𝖭𝖺𝗆𝖾* - ${mfire.result.fileName}
-
-• *𝖥𝗂𝗅𝖾 𝖲𝗂𝗓𝖾* - ${mfire.result.size}
-
-• *𝖴𝗉𝗅𝗈𝖺𝖽 𝖣𝖺𝗍𝖾 𝖠𝗇𝖽 𝖳𝗂𝗆𝖾* - ${mfire.result.date}
-
-> *©ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ*`
-
-       // Sending the image with caption
-          const sentMsg = await conn.sendMessage(from, {
-
-
-          text: msg,
-          contextInfo: {
-
-          forwardingScore: 999,
-          isForwarded: true,
-          forwardedNewsletterMessageInfo: {
-          newsletterName: ' ᴍᴀɴɪꜱʜᴀ',
-          newsletterJid: "120363296605464049@newsletter",
-          },
-          externalAdReply: {
-              title: `ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1 ᴍᴇᴅɪᴀꜰɪʀᴇ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
-              body: `Can't Find The Information. You Can Try Another Way. Error Code 4043`,
-              thumbnailUrl: `https://i.ibb.co/dPw1fHD/mfire.jpg`,
-              sourceUrl: ``,
-              mediaType: 1,
-              renderLargerThumbnail: true
-              }
-                  }
-              }, { quoted: mek });
-  
-// SEND FILE
-await conn.sendMessage(from, { document: { url: mfire.result.dl_link }, mimetype: mfire.result.fileType , fileName: mfire.result.fileName, caption: mfire.result.fileName }, { quoted: mek });
-
-  
-} catch (e) {
-console.log(e)
-reply('THIS URL TYPE IS NOT WORKING !!')
-}
-})
+const _0x37a2da=_0x504b;(function(_0x198e44,_0x5778c1){const _0x1bac69=_0x504b,_0x521864=_0x198e44();while(!![]){try{const _0x446ac2=parseInt(_0x1bac69(0x1e5))/0x1+-parseInt(_0x1bac69(0x1e4))/0x2*(parseInt(_0x1bac69(0x1cc))/0x3)+-parseInt(_0x1bac69(0x1c9))/0x4*(-parseInt(_0x1bac69(0x1d9))/0x5)+parseInt(_0x1bac69(0x1ec))/0x6+-parseInt(_0x1bac69(0x1db))/0x7*(parseInt(_0x1bac69(0x1dc))/0x8)+parseInt(_0x1bac69(0x1dd))/0x9*(parseInt(_0x1bac69(0x1f1))/0xa)+-parseInt(_0x1bac69(0x1cf))/0xb*(parseInt(_0x1bac69(0x1fb))/0xc);if(_0x446ac2===_0x5778c1)break;else _0x521864['push'](_0x521864['shift']());}catch(_0x1caaf3){_0x521864['push'](_0x521864['shift']());}}}(_0x4751,0x2e71a));const {fetchJson}=require('../lib/functions'),config=require(_0x37a2da(0x1d1)),{cmd,commands}=require('../command');let baseUrl;((async()=>{const _0x90d193=_0x37a2da;let _0x45ad98=await fetchJson('https://raw.githubusercontent.com/prabathLK/PUBLIC-URL-HOST-DB/main/public/url.json');baseUrl=_0x45ad98[_0x90d193(0x1f2)];})());const yourName=_0x37a2da(0x1de);cmd({'pattern':_0x37a2da(0x1f9),'alias':['twdl'],'desc':_0x37a2da(0x1c8),'category':'download','react':'📩','filename':__filename},async(_0x4782ec,_0x249e89,_0x5285a0,{from:_0x36c55a,quoted:_0x34c1ce,body:_0x10a47e,isCmd:_0x222458,command:_0x43f552,args:_0x1990f0,q:_0x59c438,isGroup:_0xcd7b69,sender:_0x22a71a,senderNumber:_0x236519,botNumber2:_0x49b51c,botNumber:_0x491820,pushname:_0x5722a4,isMe:_0x2cb9fa,isOwner:_0x13a88e,groupMetadata:_0x5cb759,groupName:_0xde9831,participants:_0xfbc716,groupAdmins:_0x4e5e57,isBotAdmins:_0x3efb83,isAdmins:_0x51d178,reply:_0x8ec36e})=>{const _0x6c722a=_0x37a2da;try{if(!_0x59c438&&!_0x59c438[_0x6c722a(0x1ed)]('https://'))return _0x8ec36e(_0x6c722a(0x1ce));let _0x4cd66b=await fetchJson(baseUrl+_0x6c722a(0x1cb)+_0x59c438);_0x8ec36e(_0x6c722a(0x1e2)),await _0x4782ec[_0x6c722a(0x1e1)](_0x36c55a,{'video':{'url':_0x4cd66b[_0x6c722a(0x1e8)][_0x6c722a(0x1e8)]['HD']},'mimetype':_0x6c722a(0x1f0),'caption':_0x6c722a(0x1ca)+yourName},{'quoted':_0x249e89}),await _0x4782ec[_0x6c722a(0x1e1)](_0x36c55a,{'video':{'url':_0x4cd66b[_0x6c722a(0x1e8)][_0x6c722a(0x1e8)]['SD']},'mimetype':_0x6c722a(0x1f0),'caption':_0x6c722a(0x1d3)+yourName},{'quoted':_0x249e89}),await _0x4782ec[_0x6c722a(0x1e1)](_0x36c55a,{'audio':{'url':_0x4cd66b[_0x6c722a(0x1e8)][_0x6c722a(0x1e8)]['audio']},'mimetype':'audio/mpeg'},{'quoted':_0x249e89});}catch(_0x2a2b28){console[_0x6c722a(0x1d7)](_0x2a2b28),_0x8ec36e(''+_0x2a2b28);}}),cmd({'pattern':_0x37a2da(0x1fc),'alias':[_0x37a2da(0x1f4)],'desc':_0x37a2da(0x1e9),'category':_0x37a2da(0x1d0),'react':'📩','filename':__filename},async(_0x1f3088,_0x16edb4,_0x499978,{from:_0x53e9da,quoted:_0x5ab930,body:_0x3d4380,isCmd:_0x5c812f,command:_0x5016cc,args:_0x18a373,q:_0xd9f78b,isGroup:_0x457b47,sender:_0x467d7c,senderNumber:_0x5d225a,botNumber2:_0x1649b0,botNumber:_0x4b5918,pushname:_0x262a3b,isMe:_0x519769,isOwner:_0x1e6ec3,groupMetadata:_0x3f936e,groupName:_0x54894c,participants:_0x2ce469,groupAdmins:_0x272c67,isBotAdmins:_0x362d90,isAdmins:_0x33b77d,reply:_0xed73ea})=>{const _0x2f4ba1=_0x37a2da;try{if(!_0xd9f78b&&!_0xd9f78b[_0x2f4ba1(0x1ed)]('https://'))return _0xed73ea(_0x2f4ba1(0x1f3));let _0x3a6b4c=await fetchJson(baseUrl+_0x2f4ba1(0x1da)+_0xd9f78b);_0xed73ea(_0x2f4ba1(0x1f7)),await _0x1f3088[_0x2f4ba1(0x1e1)](_0x53e9da,{'document':{'url':_0x3a6b4c[_0x2f4ba1(0x1e8)][_0x2f4ba1(0x1d0)]},'fileName':_0x3a6b4c[_0x2f4ba1(0x1e8)][_0x2f4ba1(0x1e7)],'mimetype':_0x3a6b4c[_0x2f4ba1(0x1e8)][_0x2f4ba1(0x1d2)],'caption':_0x3a6b4c['data'][_0x2f4ba1(0x1e7)]+'\x0a\x0a'+yourName},{'quoted':_0x16edb4});}catch(_0x2407b9){console[_0x2f4ba1(0x1d7)](_0x2407b9),_0xed73ea(''+_0x2407b9);}});const apilink=_0x37a2da(0x1cd);function _0x4751(){const _0x349de3=['\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20*乂\x20ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1\x20ᴍᴇᴅɪᴀꜰɪʀᴇ\x20ᴅᴏᴡɴʟᴏᴀᴅ\x20*\x20\x0a\x0a\x0a•\x20*𝖥𝗂𝗅𝖾\x20𝖭𝖺𝗆𝖾*\x20-\x20','*ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1\x20ɢᴏᴏɢʟᴇ\x20ᴅʀɪᴠᴇ\x20ꜰɪʟᴇ\x20ᴅᴏᴡɴʟᴏᴀᴅᴇʀ.📥*','https://i.ibb.co/dPw1fHD/mfire.jpg','twitter','dl_link','48RfZDKA','gdrive','size','download\x20tw\x20videos','3056aiGvxE','-\x20HD\x0a\x0a\x20','/api/twitterdl?url=','306bPyREu','https://www.dark-yasiya-api.site/download/mfire?ur','give\x20me\x20twitter\x20url','14784YaPPAg','download','../config','mimeType','-\x20SD\x20\x0a\x0a\x20','mediafire.com','mediafire','120363296605464049@newsletter','log','includes','210prTNyO','/api/gdrivedl?url=','2674AHqooJ','7000FIWyVo','18CSyPaw','*ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1*','result','mfire','sendMessage','*ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1\x20ᴛᴡɪᴛᴛᴇʀ\x20ᴠɪᴅᴇᴏ\x20ᴅᴏᴡɴʟᴏᴀᴅ📥*','date','188eXTTgv','82216qGsTyp','\x0a\x0a>\x20*©ᴄʀᴇᴀᴛᴇᴅ\x20ʙʏ\x20ᴍᴀɴɪꜱʜᴀ\x20ꜱᴀꜱᴍɪᴛʜᴀ*','fileName','data','download\x20gdrive\x20files','\x0a\x0a•\x20*𝖴𝗉𝗅𝗈𝖺𝖽\x20𝖣𝖺𝗍𝖾\x20𝖠𝗇𝖽\x20𝖳𝗂𝗆𝖾*\x20-\x20','\x20ᴍᴀɴɪꜱʜᴀ','487416ujGlhD','startsWith','This\x20url\x20is\x20invalid','fileType','video/mp4','1719540xSgPhy','api','give\x20me\x20gdrive\x20url','googledrive','PLEASE\x20GIVE\x20ME\x20URL'];_0x4751=function(){return _0x349de3;};return _0x4751();}function _0x504b(_0x5ca269,_0x1a332e){const _0x47511a=_0x4751();return _0x504b=function(_0x504b22,_0x246f15){_0x504b22=_0x504b22-0x1c7;let _0x11171c=_0x47511a[_0x504b22];return _0x11171c;},_0x504b(_0x5ca269,_0x1a332e);}cmd({'pattern':_0x37a2da(0x1e0),'alias':['mf',_0x37a2da(0x1d5)],'react':'🔥','desc':'','category':'download','use':'.mfire\x20<\x20mediafire\x20url\x20>','filename':__filename},async(_0x4d7297,_0x3eef7b,_0x2984ef,{from:_0x37e9d0,quoted:_0x4704ab,reply:_0x3c0adb,q:_0x2449c9})=>{const _0x10c7d7=_0x37a2da;try{if(!_0x2449c9)return await _0x3c0adb(_0x10c7d7(0x1f5));if(!_0x2449c9[_0x10c7d7(0x1d8)](_0x10c7d7(0x1d4)))return await _0x3c0adb(_0x10c7d7(0x1ee));const _0x3e5735=await fetchJson(apilink+'/download/mfire?url='+_0x2449c9),_0x31b6c8=_0x10c7d7(0x1f6)+_0x3e5735['result'][_0x10c7d7(0x1e7)]+'\x0a\x0a•\x20*𝖥𝗂𝗅𝖾\x20𝖲𝗂𝗓𝖾*\x20-\x20'+_0x3e5735['result'][_0x10c7d7(0x1c7)]+_0x10c7d7(0x1ea)+_0x3e5735[_0x10c7d7(0x1df)][_0x10c7d7(0x1e3)]+_0x10c7d7(0x1e6),_0x3cba3b=await _0x4d7297[_0x10c7d7(0x1e1)](_0x37e9d0,{'text':_0x31b6c8,'contextInfo':{'forwardingScore':0x3e7,'isForwarded':!![],'forwardedNewsletterMessageInfo':{'newsletterName':_0x10c7d7(0x1eb),'newsletterJid':_0x10c7d7(0x1d6)},'externalAdReply':{'title':'ᴅᴀʀᴋ_Qᴜᴇᴇɴ-ᴠ1\x20ᴍᴇᴅɪᴀꜰɪʀᴇ\x20ᴅᴏᴡɴʟᴏᴀᴅᴇʀ','body':'Can\x27t\x20Find\x20The\x20Information.\x20You\x20Can\x20Try\x20Another\x20Way.\x20Error\x20Code\x204043','thumbnailUrl':_0x10c7d7(0x1f8),'sourceUrl':'','mediaType':0x1,'renderLargerThumbnail':!![]}}},{'quoted':_0x3eef7b});await _0x4d7297[_0x10c7d7(0x1e1)](_0x37e9d0,{'document':{'url':_0x3e5735[_0x10c7d7(0x1df)][_0x10c7d7(0x1fa)]},'mimetype':_0x3e5735[_0x10c7d7(0x1df)][_0x10c7d7(0x1ef)],'fileName':_0x3e5735['result']['fileName'],'caption':_0x3e5735['result']['fileName']},{'quoted':_0x3eef7b});}catch(_0xa15c56){console['log'](_0xa15c56),_0x3c0adb('THIS\x20URL\x20TYPE\x20IS\x20NOT\x20WORKING\x20!!');}});
