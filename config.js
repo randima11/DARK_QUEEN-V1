@@ -10,33 +10,4 @@ whatsapp number:94721551183
 */
 
 
-const fs = require('fs');
-if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
-
-function convertToBool(text, fault = 'true') {
-    return text === fault ? true : false;
-}
-
-module.exports = {
-    SESSION_ID: process.env.SESSION_ID || "SMoSyRJB#T23anO-JHthTI4LCicU_XaxluEYD4q52Tp5BppC1C2Y", //enter your session
-    CAPTION: process.env.CAPTION || "©ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ",
-    AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true",
-    READ_MESSAGE: process.env.READ_MESSAGE || "true",
-    MODE: process.env.MODE || "public",
-    AUTO_VOICE: process.env.AUTO_VOICE || "true",
-    AUTO_STICKER: process.env.AUTO_STICKER || "true",
-    AUTO_REPLY: process.env.AUTO_REPLY || "false",
-    ANTI_LINK: process.env.ANTI_LINK || "true",
-    ANTI_BAD: process.env.ANTI_BAD || "true",
-    PREFIX: process.env.PREFIX || ".",
-    FAKE_RECORDING: process.env.FAKE_RECORDING || "true",
-    AUTO_REACT: process.env.AUTO_REACT || "true",
-    HEART_REACT: process.env.HEART_REACT || "true",
-    OWNER_REACT: process.env.OWNER_REACT || "true",
-    BOT_NAME: process.env.BOT_NAME || "DARK_QUEEN-ᴠ1",
-    STATUS_REPLY: process.env.STATUS_REPLY || "`☺️`",
-    OMDB_API_KEY: process.env.OMDB_API_KEY || "76cb7f39", // omdbapi.com
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/v1k9r3.jpg",
-    ALIVE_MSG: process.env.ALIVE_MSG || "╔═══════✮❁•°♛°•❁✮════════╗\n\n 𝐃𝐀𝐑𝐊 𝐐𝐔𝐄𝐄𝐍 𝐀𝐋𝐈𝐕𝐄 🩷...\n\n═══════✮❁•°♛°•❁✮═══════\n\n`ᴅᴀʀᴋ_Qᴜᴇᴇɴ ᴀᴄᴛɪᴠᴇ.`✅\n\n═══════✮❁•°♛°•❁✮═══════\n\n `ᴏᴡɴᴇʀ : ᴍᴀɴɪꜱʜᴀ ꜱᴀꜱᴍɪᴛʜᴀ`\n\n═══════✮❁•°♛°•❁✮═══════\n\n `ʙᴏᴛ : ᴅᴀʀᴋ_Qᴜᴇᴇɴ`\n\n═══════✮❁•°♛°•❁✮═══════\n\n ᴡʜᴀᴛꜱᴀᴘᴘ ɢʀᴏᴜᴘ : https://chat.whatsapp.com/IEEUnyvlnCqDeuFw1DEsWk\n\n═══════✮❁•°♛°•❁✮═══════\n\n 💬 ᴇɴᴏʏ ᴛʜᴇ ᴅᴀʀᴋ_Qᴜᴇᴇɴ ʙᴏᴛ 🩷 ....\n\n > ᴅᴀʀᴋ_Qᴜᴇᴇɴ \n\n ╚═══════✮❁•°♛°•❁✮════════╝",
-    AUTO_BIO:"true",
-};
+function _0x5092(){const _0x3b2bba=['true','CAPTION','57Fbuhpt','ANTI_LINK','AUTO_VOICE','ALIVE_IMG','existsSync','214356WRKdkx','OMDB_API_KEY','`☺️`','config.env','2419572ZrOJIE','1552620EfmFXw','11735532EDHldY','dotenv','9033024QwMqhm','603966dUCUiX','ALIVE_MSG','config','MODE','false','BOT_NAME','exports','88121VMEGwj','╔═══════✮❁•°♛°•❁✮════════╗\x0a\x0a\x20𝐃𝐀𝐑𝐊\x20𝐐𝐔𝐄𝐄𝐍\x20𝐀𝐋𝐈𝐕𝐄\x20🩷...\x0a\x0a═══════✮❁•°♛°•❁✮═══════\x0a\x0a`ᴅᴀʀᴋ_Qᴜᴇᴇɴ\x20ᴀᴄᴛɪᴠᴇ.`✅\x0a\x0a═══════✮❁•°♛°•❁✮═══════\x0a\x0a\x20`ᴏᴡɴᴇʀ\x20:\x20ᴍᴀɴɪꜱʜᴀ\x20ꜱᴀꜱᴍɪᴛʜᴀ`\x0a\x0a═══════✮❁•°♛°•❁✮═══════\x0a\x0a\x20`ʙᴏᴛ\x20:\x20ᴅᴀʀᴋ_Qᴜᴇᴇɴ`\x0a\x0a═══════✮❁•°♛°•❁✮═══════\x0a\x0a\x20ᴡʜᴀᴛꜱᴀᴘᴘ\x20ɢʀᴏᴜᴘ\x20:\x20https://chat.whatsapp.com/IEEUnyvlnCqDeuFw1DEsWk\x0a\x0a═══════✮❁•°♛°•❁✮═══════\x0a\x0a\x20💬\x20ᴇɴᴏʏ\x20ᴛʜᴇ\x20ᴅᴀʀᴋ_Qᴜᴇᴇɴ\x20ʙᴏᴛ\x20🩷\u00a0....\x0a\x0a\x20>\x20ᴅᴀʀᴋ_Qᴜᴇᴇɴ\x20\x0a\x0a\x20╚═══════✮❁•°♛°•❁✮════════╝','STATUS_REPLY','PREFIX','8IUkeMP','3010XjhXdp','ANTI_BAD','AUTO_REPLY','env','./config.env','5ynIJiw','HEART_REACT'];_0x5092=function(){return _0x3b2bba;};return _0x5092();}const _0x7922d0=_0x4b42;(function(_0x1a4fae,_0x11b5c7){const _0x695c53=_0x4b42,_0x38c9a8=_0x1a4fae();while(!![]){try{const _0x53f9b8=parseInt(_0x695c53(0xaa))/0x1+-parseInt(_0x695c53(0xa6))/0x2+-parseInt(_0x695c53(0x9c))/0x3*(parseInt(_0x695c53(0xa1))/0x4)+parseInt(_0x695c53(0x98))/0x5*(-parseInt(_0x695c53(0xa5))/0x6)+parseInt(_0x695c53(0xa9))/0x7+parseInt(_0x695c53(0x92))/0x8*(-parseInt(_0x695c53(0xa7))/0x9)+parseInt(_0x695c53(0x93))/0xa*(parseInt(_0x695c53(0x8e))/0xb);if(_0x53f9b8===_0x11b5c7)break;else _0x38c9a8['push'](_0x38c9a8['shift']());}catch(_0x4c980b){_0x38c9a8['push'](_0x38c9a8['shift']());}}}(_0x5092,0xc449e));const fs=require('fs');function _0x4b42(_0x51c524,_0x51e968){const _0x5092fa=_0x5092();return _0x4b42=function(_0x4b4223,_0x370cdc){_0x4b4223=_0x4b4223-0x8d;let _0xe021c9=_0x5092fa[_0x4b4223];return _0xe021c9;},_0x4b42(_0x51c524,_0x51e968);}if(fs[_0x7922d0(0xa0)](_0x7922d0(0xa4)))require(_0x7922d0(0xa8))[_0x7922d0(0xac)]({'path':_0x7922d0(0x97)});function convertToBool(_0x256d81,_0x43201e=_0x7922d0(0x9a)){return _0x256d81===_0x43201e?!![]:![];}module[_0x7922d0(0x8d)]={'SESSION_ID':process[_0x7922d0(0x96)]['SESSION_ID']||'SMoSyRJB#T23anO-JHthTI4LCicU_XaxluEYD4q52Tp5BppC1C2Y','CAPTION':process[_0x7922d0(0x96)][_0x7922d0(0x9b)]||'©ᴄʀᴇᴀᴛᴇᴅ\x20ʙʏ\x20ᴍᴀɴɪꜱʜᴀ\x20ꜱᴀꜱᴍɪᴛʜᴀ','AUTO_READ_STATUS':process[_0x7922d0(0x96)]['AUTO_READ_STATUS']||'true','READ_MESSAGE':process[_0x7922d0(0x96)]['READ_MESSAGE']||_0x7922d0(0x9a),'MODE':process['env'][_0x7922d0(0xad)]||'public','AUTO_VOICE':process[_0x7922d0(0x96)][_0x7922d0(0x9e)]||_0x7922d0(0x9a),'AUTO_STICKER':process[_0x7922d0(0x96)]['AUTO_STICKER']||'true','AUTO_REPLY':process[_0x7922d0(0x96)][_0x7922d0(0x95)]||_0x7922d0(0xae),'ANTI_LINK':process['env'][_0x7922d0(0x9d)]||_0x7922d0(0x9a),'ANTI_BAD':process['env'][_0x7922d0(0x94)]||_0x7922d0(0x9a),'PREFIX':process[_0x7922d0(0x96)][_0x7922d0(0x91)]||'.','FAKE_RECORDING':process[_0x7922d0(0x96)]['FAKE_RECORDING']||_0x7922d0(0x9a),'AUTO_REACT':process[_0x7922d0(0x96)]['AUTO_REACT']||_0x7922d0(0x9a),'HEART_REACT':process[_0x7922d0(0x96)][_0x7922d0(0x99)]||_0x7922d0(0x9a),'OWNER_REACT':process['env']['OWNER_REACT']||'true','BOT_NAME':process['env'][_0x7922d0(0xaf)]||'DARK_QUEEN-ᴠ1','STATUS_REPLY':process[_0x7922d0(0x96)][_0x7922d0(0x90)]||_0x7922d0(0xa3),'OMDB_API_KEY':process[_0x7922d0(0x96)][_0x7922d0(0xa2)]||'76cb7f39','ALIVE_IMG':process['env'][_0x7922d0(0x9f)]||'https://files.catbox.moe/v1k9r3.jpg','ALIVE_MSG':process['env'][_0x7922d0(0xab)]||_0x7922d0(0x8f),'AUTO_BIO':_0x7922d0(0x9a)};
